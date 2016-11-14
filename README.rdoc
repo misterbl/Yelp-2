@@ -1,3 +1,37 @@
+___
+##Yelp
+___
+###User Stories
+```
+As a Visitor
+So I can review a restaurant
+I must be able to add a restaurant
+```
+```
+As a Visitor
+So that I can rate a restaurant
+I must be able to write a view
+```
+```
+As a Visitor
+So that I can update restaurant details
+I must be able to edit restaurant details
+```
+```
+As a Visitor
+So that I can remove a restaurant that is no longer there
+I must be able to delete restaurant details
+```
+```
+As a Visitor
+So I can view all the restaurants
+I must be able to see a list of all the restaurants
+```
+```
+As a Visitor
+So that I can tell if a restaurant is good or bad
+I must be able to see the reviews
+```
 == README
 
 This README would normally document whatever steps are necessary to get the

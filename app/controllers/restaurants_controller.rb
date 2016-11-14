@@ -23,6 +23,9 @@ class RestaurantsController < ApplicationController
     end
   end
 
+  def delete
+  end
+
   private
   def restaurant_params
     params.require(:restaurant).permit(:name, :description)

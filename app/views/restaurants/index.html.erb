@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>List of Restaurants</th>
+    <th>Text</th>
+    <th colspan="2"></th>
+  </tr>
+
+  <% @restaurants.each do |restaurant| %>
+    <tr>
+      <td><%= restaurant.title %></td>
+      <td><%= restaurant.text %></td>
+      <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
+      <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -10,7 +10,7 @@ I must be able to add a restaurant
 ```
 As a Visitor
 So that I can rate a restaurant
-I must be able to write a view
+I must be able to write a review
 ```
 ```
 As a Visitor

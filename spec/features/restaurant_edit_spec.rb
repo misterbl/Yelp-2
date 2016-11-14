@@ -5,6 +5,7 @@
       click_link 'Edit'
       fill_in 'name', with: 'Oi Hanoi'
       fill_in 'description', with: 'Closed Down!!'
+      clcik_button 'Save Restaurant'
 
       expect(page).to have_content('Closed Down!!')
     end

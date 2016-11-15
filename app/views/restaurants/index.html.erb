@@ -6,18 +6,20 @@
     <th>Description</th>
   </tr>
   <% @restaurants.each do |restaurant| %>
-    <tr>
-      <td><%= restaurant.name %></td>
-      <td><%= restaurant.description %></td>
-      <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
-      <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-      <td><%= link_to 'Delete', restaurant_path(restaurant),
-             method: :delete,
-             data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+  <tr>
+    <td><%= restaurant.name %></td>
+    <td><%= restaurant.description %></td>
+    <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
+    <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+    <td><%= link_to 'Delete', restaurant_path(restaurant),
+    method: :delete,
+    data: { confirm: 'Are you sure?' } %></td>
+  </tr>
   <% end %>
 </table>
-
+<% if @restaurants.empty? %>
+<p> The list is empty </p>
+<% end %>
 <form method="get" action="/restaurants/new">
-    <button type="submit">Create a new restaurant</button>
+  <button type="submit">Create a new restaurant</button>
 </form>

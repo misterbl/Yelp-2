@@ -24,12 +24,9 @@
     <%= review.rating %>
   </p>
 <% end %>
+<% if @restaurant.user_id != @current_user.id && !@current_user.nil?%>
 <h2>Add a review:</h2>
 <%= form_for([@restaurant, @restaurant.reviews.build]) do |f| %>
-<p>
-  <%= f.label :reviewer %><br>
-  <%= f.text_field :reviewer %>
-</p>
   <p>
     <%= f.label :text %><br>
     <%= f.text_area :text %>
@@ -41,6 +38,9 @@
   <p>
     <%= f.submit %>
   </p>
+<% end %>
+<% else %>
+<h2> You need to be logged in to write a review <h2>
 <% end %>
 
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |

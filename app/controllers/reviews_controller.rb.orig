@@ -3,14 +3,25 @@ class ReviewsController < ApplicationController
     current_user
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = @restaurant.reviews.create(review_params)
+<<<<<<< HEAD
     @review.update(user_id: @current_user.id, reviewer: @current_user.email)
+=======
     @restaurant.update_average_ratings(@restaurant)
+>>>>>>> 8f480cd5cbecda84047efd09be3daea23af72a8d
     redirect_to restaurant_path(@restaurant)
   end
 
+
   private
+<<<<<<< HEAD
     def review_params
       params.require(:review).permit(:text, :rating, :reviewer, :user_id, :restaurant_id)
     end
+=======
+
+  def review_params
+    params.require(:review).permit(:text, :rating, :reviewer)
+  end
+>>>>>>> 8f480cd5cbecda84047efd09be3daea23af72a8d
 
 end

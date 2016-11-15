@@ -4,9 +4,9 @@
       visit '/restaurants'
       click_link 'Show'
 <<<<<<< HEAD
+  
 =======
-      save_and_open_page
->>>>>>> master
+>>>>>>> 8f480cd5cbecda84047efd09be3daea23af72a8d
       fill_in 'Reviewer', with: 'laurent@makers.com'
       fill_in 'Text', with: 'Best restaurant in town!'
       fill_in 'Rating', with: '5'

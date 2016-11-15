@@ -3,7 +3,6 @@
       Restaurant.create(name: 'Oi Hanoi', description: 'Now open in London tonight!')
       visit '/restaurants'
       click_link 'Show'
-  
       fill_in 'Reviewer', with: 'laurent@makers.com'
       fill_in 'Text', with: 'Best restaurant in town!'
       fill_in 'Rating', with: '5'

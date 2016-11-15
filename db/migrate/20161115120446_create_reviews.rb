@@ -5,6 +5,7 @@ class CreateReviews < ActiveRecord::Migration
       t.integer :rating
       t.string :reviewer
       t.references :restaurant, index: true
+      t.references :user, index: true
 
       t.timestamps
     end

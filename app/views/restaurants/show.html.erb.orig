@@ -27,10 +27,13 @@
 <% if @restaurant.user_id != @current_user.id && !@current_user.nil?%>
 <h2>Add a review:</h2>
 <%= form_for([@restaurant, @restaurant.reviews.build]) do |f| %>
+<<<<<<< HEAD
+=======
 <p>
   <%= f.label :reviewer %><br>
   <%= f.text_field :reviewer %>
 </p>
+>>>>>>> master
   <p>
     <%= f.label :text %><br>
     <%= f.text_area :text %>

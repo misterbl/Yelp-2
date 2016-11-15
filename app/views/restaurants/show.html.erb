@@ -39,7 +39,7 @@
     <%= f.submit %>
   </p>
 <% end %>
-<% else %>
+<% elsif @current_user.nil?%>
 <h2> You need to be logged in to write a review <h2>
 <% end %>
 

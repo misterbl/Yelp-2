@@ -35,6 +35,16 @@ As a Visitor
 So that I can tell if a restaurant is good or bad
 I must be able to see the reviews
 ```
+```
+As a Visitor
+So that I can decide which restaurant to visit
+I must be able to see the average rating for each restaurant
+```
+```
+As a Visitor
+So that I can tell if a restaurant is good or bad
+I must be able to see the reviews
+```
 
            V2
  ```

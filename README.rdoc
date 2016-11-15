@@ -2,6 +2,8 @@ ___
 ##Yelp
 ___
 ###User Stories
+
+                   V1
 ```
 As a Visitor
 So I can review a restaurant
@@ -32,6 +34,36 @@ As a Visitor
 So that I can tell if a restaurant is good or bad
 I must be able to see the reviews
 ```
+
+           V2
+ ```
+ As a Visitor
+ So that I can write a review
+ I must be able to register
+ ```
+ ```
+ As a Visitor
+ So that I can see my account
+ I must be able to login
+ ```
+
+ ```
+ As a Visitor
+ So that I can see I am logged in
+ I must be able to see some indication of that on the page
+ ```
+
+ ```
+ As a Reviewer
+ So that I be identified
+ I must be able to see my email address on the review I have written
+ ```
+
+ ```
+ As a Reviewer
+ So that reviews are fair
+ I must not be able to leave reviews for a restaurant I have created
+ ```
 == README
 
 This README would normally document whatever steps are necessary to get the

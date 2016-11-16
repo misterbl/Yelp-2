@@ -29,6 +29,7 @@ gem 'spring',        group: :development
 
 gem 'rspec-rails', '~> 3.5'
 gem 'capybara'
+gem 'devise'
 
 group :test do
   gem 'database_cleaner'

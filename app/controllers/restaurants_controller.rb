@@ -1,11 +1,11 @@
 class RestaurantsController < ApplicationController
   def index
-    user_signed_in?
     current_user
     @restaurants = Restaurant.all
   end
 
   def new
+    user_signed_in?
     current_user
     @restaurant = Restaurant.new
   end

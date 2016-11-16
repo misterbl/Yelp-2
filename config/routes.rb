@@ -2,17 +2,17 @@ Rails.application.routes.draw do
 
 
   devise_for :users
-  get 'sessions/new'
+  # get 'sessions/new'
 
-  get 'users/new'
-
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  # get 'users/new'
+  #
+  # get '/login', to: 'sessions#new'
+  # post '/login', to: 'sessions#create'
+  # delete '/logout', to: 'sessions#destroy'
 
   resources :restaurants
 
-    root 'welcome#index'
+    root 'restaurants#index'
   get 'restaurants' => 'restaurants#index'
   get 'restaurants/new' => 'restaurants#new'
   resources :restaurants do

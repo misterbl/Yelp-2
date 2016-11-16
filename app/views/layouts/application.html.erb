@@ -11,7 +11,7 @@
   <% flash.each do |message_type, message| %>
   <div class="alert alert-<%= message_type %>"><%= message %></div>
   <% end %>
-  <%= link_to "Sign out", logout_path, method: :delete %>
+  <!-- <%= link_to "Sign out", logout_path, method: :delete %> -->
 <%= yield %>
 
 </body>

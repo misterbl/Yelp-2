@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
   def index
+    user_signed_in?
     current_user
     @restaurants = Restaurant.all
   end

@@ -1,20 +1,24 @@
 class RestaurantsController < ApplicationController
   def index
+    user_signed_in?
     current_user
     @restaurants = Restaurant.all
   end
 
   def new
+    user_signed_in?
     current_user
     @restaurant = Restaurant.new
   end
 
   def edit
+    user_signed_in?
     current_user
     @restaurant = Restaurant.find(params[:id])
   end
 
   def create
+    user_signed_in?
     current_user
     @user = User.find(@current_user.id)
     @restaurant = @user.restaurants.create(restaurant_params)
@@ -41,10 +45,12 @@ class RestaurantsController < ApplicationController
 
 
   def destroy
-     @restaurant = Restaurant.find(params[:id])
-     @restaurant.destroy
+    @restaurant = Restaurant.find(params[:id])
+    if current_user.id == @restaurant.user_id
+      @restaurant.destroy
+    end
 
-     redirect_to restaurants_path
+    redirect_to restaurants_path
   end
 
   private

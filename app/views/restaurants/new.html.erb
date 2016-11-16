@@ -1,5 +1,4 @@
 
-<% if !@current_user.nil? %>
 <h1>New restaurant</h1>
 
 <%= form_for :restaurant, url: restaurants_path do |f| %>
@@ -42,7 +41,4 @@
   <p>
     <%= f.submit %>
   </p>
-<% end %>
-<% else %>
-<h2> You need to be logged in to add a restaurant </h2>
 <% end %>

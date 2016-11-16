@@ -75,6 +75,29 @@ I must be able to see the reviews
  So that reviews are fair
  I must not be able to leave reviews for a restaurant I have created
  ```
+
+                      V3
+
+As a user
+So I can delete or update a restaurant
+I must be the creator of that restaurant
+
+As a user
+So reviews are fair
+I can only leave one review per restaurant
+
+As a user
+So I can change my mind
+I can delete my own reviews
+
+
+              Bonus
+
+As a user
+So I can create a full restaurant page
+I must be able to upload photos
+
+
 == README
 
 This README would normally document whatever steps are necessary to get the

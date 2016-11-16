@@ -39,6 +39,7 @@ gem 'bcrypt', '~> 3.1.11'
 gem 'carrierwave', :github => 'carrierwaveuploader/carrierwave'
 gem  'geocoder'
 
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

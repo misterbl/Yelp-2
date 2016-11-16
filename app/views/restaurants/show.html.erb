@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style>
+    #map {
+      height: 200px;
+      width: 20%;
+          }
+    </style>
+
+</head>
+
+<body>
 <% @restaurant.avatars.each{|avatar|%>
 <%= image_tag avatar  %>
 <% } %>
@@ -6,6 +22,28 @@
   <strong>Name:</strong>
   <%= @restaurant.name %>
 </p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @restaurant.address %>
+</p>
+
+<div id="map"></div>
+    <script>
+        function initMap() {
+          var location = {lat: <%= @restaurant.latitude %>, lng: <%= @restaurant.longitude %>};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: location
+          });
+          var marker = new google.maps.Marker({
+            position: location,
+            map: map
+          });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDEgBHk1qd0PT7WES0ozFGiQB8owSRet8&callback=initMap"
+    async defer></script>
 
 <p>
   <strong>Description:</strong>
@@ -63,3 +101,6 @@
 <form method="get" action="/restaurants">
     <button type="submit">List</button>
 </form>
+
+</body>
+</html>

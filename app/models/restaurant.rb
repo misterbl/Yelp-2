@@ -4,6 +4,8 @@ class Restaurant < ActiveRecord::Base
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 10 }
   mount_uploaders :avatars, AvatarUploader
+  geocoded_by :address
+  after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 
   def calculate_average_ratings(restaurant)
       all_reviews = restaurant.reviews
@@ -17,17 +19,17 @@ class Restaurant < ActiveRecord::Base
     restaurant.update(average)
   end
 
-  def geoAddresse
-    geocoded_by :address
-    after_validation :geocode
-  
-  end
-
-  def geoIp
-    geocoded_by :ip_address,
-    :latitude => :lat, :longitude => :lon
-    after_validation :geocode
-
-  end
+  # def geoAddresse
+  #   geocoded_by :address
+  #   after_validation :geocode
+  #
+  # end
+  #
+  # def geoIp
+  #   geocoded_by :ip_address,
+  #   :latitude => :lat, :longitude => :lon
+  #   after_validation :geocode
+  #
+  # end
 
 end

@@ -25,6 +25,13 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </p>
+  <p> You can add up to 5 photos </p>
+  <%= f.file_field :avatars, multiple: true %><br>
+  <%= f.file_field :avatars, multiple: true %><br>
+  <%= f.file_field :avatars, multiple: true %><br>
+  <%= f.file_field :avatars, multiple: true %><br>
+  <%= f.file_field :avatars, multiple: true %><br>
+  <%= f.file_field :avatars, multiple: true %>
 
   <p>
     <%= f.submit %>

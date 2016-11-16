@@ -1,3 +1,7 @@
+<% @restaurant.avatars.each{|avatar|%>
+<%= image_tag avatar  %>
+<% } %>
+
 <p>
   <strong>Name:</strong>
   <%= @restaurant.name %>

@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20161116112920) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.float    "average_rating"
+    t.string   "avatar"
     t.json     "avatars"
   end
 

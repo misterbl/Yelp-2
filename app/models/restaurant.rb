@@ -3,7 +3,8 @@ class Restaurant < ActiveRecord::Base
   has_many :reviews
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 10 }
-
+  mount_uploaders :avatars, AvatarUploader
+  
   def calculate_average_ratings(restaurant)
       all_reviews = restaurant.reviews
           avg_rating =  all_reviews.inject(0) { |sum, num| sum + num.rating } /

@@ -26,6 +26,16 @@
     <%= f.text_area :description %>
   </p>
 
+  <% @restaurant.avatars.each{|avatar|%>
+  <%= image_tag(avatar, :size => "260x180")  %>
+  <% } %>
+  <p> You can replace up to 5 photos </p>
+  <%= f.file_field :avatars, multiple: true %><br>
+  <%= f.file_field :avatars, multiple: true %><br>
+  <%= f.file_field :avatars, multiple: true %><br>
+  <%= f.file_field :avatars, multiple: true %><br>
+  <%= f.file_field :avatars, multiple: true %><br>
+  <%= f.file_field :avatars, multiple: true %>
   <p>
     <%= f.submit %>
   </p>

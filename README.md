@@ -1,8 +1,8 @@
 [![Waffle](https://badge.waffle.io/RoystonHenson/Yelp.png?label=ready&title=Ready)](https://waffle.io/RoystonHenson/Yelp)
 ___
-## Yelp
+# Yelp
 ___
-### V1
+## V1
 ```
 As a Visitor
 So I can review a restaurant
@@ -43,7 +43,7 @@ As a Visitor
 So that I can tell if a restaurant is good or bad
 I must be able to see the reviews
 ```
-### V2
+## V2
  ```
  As a Visitor
  So that I can write a review
@@ -69,7 +69,7 @@ I must be able to see the reviews
  So that reviews are fair
  I must not be able to leave reviews for a restaurant I have created
  ```
-### V3
+## V3
 ```
 As a user
 So I can delete or update a restaurant

@@ -1,7 +1,6 @@
 [![Waffle](https://badge.waffle.io/RoystonHenson/Yelp.png?label=ready&title=Ready)](https://waffle.io/RoystonHenson/Yelp)
 ___
 # Yelp
-___
 ## V1
 ```
 As a Visitor

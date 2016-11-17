@@ -1,3 +1,12 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8&appId=376687579339706";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
 <h1>List of the restaurants</h1>
 
 <table>
@@ -10,8 +19,8 @@
     <td><%= restaurant.name %></td>
     <td><%= restaurant.description %></td>
     <td><%= restaurant.average_rating %></td>
-    <td><%= link_to 'Show', restaurant_path(restaurant) %></td>  
-  <%if current_user.id == restaurant.user_id %>
+    <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
+  <%if user_signed_in? && current_user.id == restaurant.user_id %>
     <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
     <td><%= link_to 'Delete', restaurant_path(restaurant),
     method: :delete,
@@ -27,3 +36,4 @@
 <form method="get" action="/restaurants/new">
   <button type="submit">Create a new restaurant</button>
 </form>
+<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>

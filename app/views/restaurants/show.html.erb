@@ -93,8 +93,6 @@
 
     <% if @restaurant.user_id != @current_user.id%>
 
-
-
     <h2>Add a review:</h2>
     <%= form_for([@restaurant, @restaurant.reviews.build]) do |f| %>
 
@@ -110,12 +108,13 @@
     <p>
       <%= f.submit 'Submit', :id => "get" %>
     </p>
-  
-    <% end %>
+
     <% end %>
 
+    <% else %>
     <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
     <%= link_to 'Back', restaurants_path %>
+    <% end %>
 
 
     <form method="get" action="/restaurants">

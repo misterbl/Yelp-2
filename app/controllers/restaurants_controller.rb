@@ -31,6 +31,7 @@ class RestaurantsController < ApplicationController
   def show
     @restaurant = Restaurant.find(params[:id])
     current_user
+    @reviews = @restaurant.reviews
   end
 
   def update

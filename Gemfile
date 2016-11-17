@@ -43,7 +43,7 @@ gem 'fog'
 gem 'carrierwave_direct'
 gem 'sidekiq'
 gem 'omniauth-facebook'
-
+gem 'rake'
 
 
 

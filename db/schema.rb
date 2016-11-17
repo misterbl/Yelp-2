@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20161117123451) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "average_rating"
+    t.float    "average_rating", default: 0.0
     t.json     "avatars"
     t.float    "latitude"
     t.float    "longitude"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20161117123451) do
     t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "password_digest"
+    t.json     "avatars"
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

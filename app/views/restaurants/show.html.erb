@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="jquery.rateyo.css"/>
   <meta charset="utf-8">
   <title></title>
 
@@ -93,14 +92,14 @@
   <hr>
 
     <% if @restaurant.user_id != @current_user.id%>
+
+
+
     <h2>Add a review:</h2>
     <%= form_for([@restaurant, @restaurant.reviews.build]) do |f| %>
+
     <p>
-      <%= f.label :reviewer %><br>
-      <%= f.text_field :reviewer %>
-    </p>
-    <p>
-      <%= f.label :text %><br>
+      <%= f.label(:text, "Review:") %><br>
       <%= f.text_area :text %>
     </p>
 
@@ -111,6 +110,7 @@
     <p>
       <%= f.submit 'Submit', :id => "get" %>
     </p>
+  
     <% end %>
     <% end %>
 

@@ -1,3 +1,6 @@
+<% if user_signed_in? %>
+<%= link_to "Account", user_path(current_user), method: :get %>
+<% end %>
 <h1>List of the restaurants</h1>
 
 <table>
@@ -10,8 +13,9 @@
     <td><%= restaurant.name %></td>
     <td><%= restaurant.description %></td>
     <td><%= restaurant.average_rating %></td>
-    <td><%= link_to 'Show', restaurant_path(restaurant) %></td>  
-  <%if current_user.id == restaurant.user_id %>
+    <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
+
+  <%if current_user!= nil && current_user.id == restaurant.user_id %>
     <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
     <td><%= link_to 'Delete', restaurant_path(restaurant),
     method: :delete,

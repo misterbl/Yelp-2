@@ -42,6 +42,7 @@ gem  'geocoder'
 gem 'fog'
 gem 'carrierwave_direct'
 gem 'sidekiq'
+gem 'omniauth-facebook'
 
 
 # Use unicorn as the app server

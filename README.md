@@ -1,4 +1,4 @@
-![Waffle!](https://badge.waffle.io/RoystonHenson/Yelp.png?label=ready&title=Ready)(https://waffle.io/RoystonHenson/Yelp)
+[![[Waffle](https://badge.waffle.io/RoystonHenson/Yelp.png?label=ready&title=Ready)](https://waffle.io/RoystonHenson/Yelp)
 ___
 ## Yelp
 ___

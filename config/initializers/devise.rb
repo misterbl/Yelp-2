@@ -36,6 +36,11 @@ Devise.setup do |config|
   # or not authentication should be aborted when the value is not present.
   # config.authentication_keys = [:email]
 
+  # facebook authentication
+  config.omniauth :facebook, "376687579339706", "1aa292a06196f8b3ed1ae946174aa4c5",
+                  callback_url: "http://localhost:3000/users/auth/facebook/callback"
+
+
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
   # find_for_authentication method and considered in your model lookup. For instance,

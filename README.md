@@ -1,6 +1,6 @@
 [![[Waffle](https://badge.waffle.io/RoystonHenson/Yelp.png?label=ready&title=Ready)](https://waffle.io/RoystonHenson/Yelp)
 
-[![Stories in Progress](https://badge.waffle.io/waffleio/waffle.io.svg?label=waffle%3Ain%20progress&title=In%20Progress)](http://waffle.io/waffleio/waffle.io)
+[![Stories in Progress](https://badge.waffle.io/RoystonHenson/Yelp.png?label=ready&title=Ready)](https://waffle.io/RoystonHenson/Yelp)
 ___
 ## Yelp
 ___

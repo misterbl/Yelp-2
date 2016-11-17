@@ -1,10 +1,8 @@
 {<img alt='Stories in Ready' src='https://badge.waffle.io/RoystonHenson/Yelp.png?label=ready&title=Ready' />}[https://waffle.io/RoystonHenson/Yelp]
 ___
-##Yelp
+**Yelp**
 ___
-###User Stories
-
-                   V1
+**V1**
 ```
 As a Visitor
 So I can review a restaurant
@@ -45,8 +43,7 @@ As a Visitor
 So that I can tell if a restaurant is good or bad
 I must be able to see the reviews
 ```
-
-           V2
+**V2**
  ```
  As a Visitor
  So that I can write a review
@@ -76,29 +73,32 @@ I must be able to see the reviews
  I must not be able to leave reviews for a restaurant I have created
  ```
 
-                      V3
-
+**V3**
+```
 As a user
 So I can delete or update a restaurant
 I must be the creator of that restaurant
-
+```
+```
 As a user
 So reviews are fair
 I can only leave one review per restaurant
-
+```
+```
 As a user
 So I can change my mind
 I can delete my own reviews
+```
 
 
-              Bonus
-
+**Bonus**
+```
 As a user
 So I can create a full restaurant page
 I must be able to upload photos
-
-
-== README
+```
+```
+README
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
@@ -126,3 +126,4 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+```

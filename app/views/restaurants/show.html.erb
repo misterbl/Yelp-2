@@ -16,7 +16,7 @@
 
 <body>
   <% @restaurant.avatars.each{|avatar|%>
-    <%= image_tag avatar  %>
+    <%= image_tag(avatar, :size => "260x180") %>
     <% } %>
 
     <p>

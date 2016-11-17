@@ -5,8 +5,10 @@ before_action :configure_sign_up_params, only: [:create]
   # GET /resource/sign_up
   def new
     super
-    
+
   end
+
+
 
   # POST /resource
   # def create

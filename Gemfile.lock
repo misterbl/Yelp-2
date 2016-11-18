@@ -232,6 +232,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    materialize-sass (0.97.8)
+      sass (~> 3.3)
     mime-types (1.25.1)
     mimemagic (0.3.0)
     mini_portile2 (2.1.0)
@@ -379,6 +381,7 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 2.0)
   jquery-rails
+  materialize-sass
   omniauth-facebook
   paperclip
   pg
@@ -394,9 +397,6 @@ DEPENDENCIES
   spring
   turbolinks
   uglifier (>= 1.3.0)
-
-RUBY VERSION
-   ruby 2.3.0p0
 
 BUNDLED WITH
    1.13.6

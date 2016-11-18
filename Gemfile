@@ -47,8 +47,8 @@ gem 'omniauth-facebook'
 gem 'rake'
 gem 'dotenv-rails', :groups => [:development, :test, :production]
 gem 'aws-sdk', '< 2.3'
+gem 'materialize-sass'
 gem 'paperclip'
-ruby '2.3.0'
 gem 'rails_12factor'
 gem 'puma'
 

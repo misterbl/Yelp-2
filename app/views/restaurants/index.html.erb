@@ -1,19 +1,33 @@
-
+<div class="container-fluid" style="padding-left:5%;padding-right:5%;">
 <h1>List of the restaurants</h1>
-
 <table>
   <tr>
     <th>Name</th>
     <th>Description</th>
+    <th>Average Rating</th>
+    <th></th>
   </tr>
-  <% @restaurants.each do |restaurant| %>
+  <% @restaurants.each_with_index do |restaurant, i| %>
   <tr>
     <td><%= restaurant.name %></td>
     <td><%= restaurant.description %></td>
-    <td><%= restaurant.average_rating %></td>
+    <td><div id="<%=i%>"></div>
+
+      <script>
+      $(document).ready(function() {
+        $(function () {
+          $("#" + <%=i%>).rateYo({
+            rating: <%= restaurant.average_rating %>,
+            readOnly: true
+          });
+        });
+      });
+      </script>
+
+    </td>
     <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
 
-  <%if user_signed_in? && current_user.id == restaurant.user_id %>
+    <%if user_signed_in? && current_user.id == restaurant.user_id %>
     <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
     <td><%= link_to 'Delete', restaurant_path(restaurant),
     method: :delete,
@@ -29,3 +43,4 @@
 <form method="get" action="/restaurants/new">
   <button type="submit">Create a new restaurant</button>
 </form>
+</div>

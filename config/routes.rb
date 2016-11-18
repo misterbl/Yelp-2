@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   }
 
-    get 'sign_out' => 'devise/sessions#destroy'
+    get 'users/sign_out' => 'devise/sessions#destroy'
 
 
   resources :restaurants

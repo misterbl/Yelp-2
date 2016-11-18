@@ -10,138 +10,157 @@
     width: 20%;
   }
 
+  textarea#review_text {
+    width: 100%;
+    height: 100px;
+  }
   </style>
 
 </head>
 
 <body>
-  <% @restaurant.avatars.each{|avatar|%>
-    <%= image_tag(avatar, :size => "260x180") %>
-    <% } %>
 
-    <p>
-      <strong>Name:</strong>
-      <%= @restaurant.name %>
-    </p>
+  <div class="container-fluid" style="padding-left:5%;padding-right:5%;">
 
-    <p>
-      <strong>Address:</strong>
-      <%= @restaurant.address %>
-    </p>
-
-    <div id="map"></div>
-    <script>
-    function initMap() {
-      var location = {lat: <%= @restaurant.latitude %>, lng: <%= @restaurant.longitude %>};
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 15,
-        center: location
-      });
-      var marker = new google.maps.Marker({
-        position: location,
-        map: map
-      });
-    }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDEgBHk1qd0PT7WES0ozFGiQB8owSRet8&callback=initMap"
-    async defer></script>
-
-    <p>
-      <strong>Description:</strong>
-      <%= @restaurant.description %>
-    </p>
-
-    <p>
-      <div id="avg" style="display: inline-block;"></div>
-      <h4 style="display: inline-block; position: relative;bottom: 10px;">
-        <%= @restaurant.reviews.length %> reviews
-      </h4>
-    </p>
+    <div class="row">
+      <h2><%= @restaurant.name %></h2>
+      <p>
+        <div id="avg" style="display: inline-block;"></div>
+        <h5 style="display: inline-block; position: relative;bottom: 5px;">
+          <%= @restaurant.reviews.length %> reviews
+        </h5>
+      </p>
+    </div>
     <hr>
 
-    <h2>Reviews</h2>
-    <table WIDTH="60%">
-    <% @restaurant.reviews.each_with_index do |review, index| %>
+    <% @restaurant.avatars.each{|avatar|%>
 
-      <tr>
-        <td width="15%"><h4><%= review.reviewer %></h4></td>
-        <td width="45%"><div id="<%= index%>"></div></td>
-      </tr>
-      <tr>
-        <td width="15%"></td>
-        <td width="45%"><%= review.text %></td>
-      </tr>
-      <tr><td colspan="2"><br></td></tr>
+      <div class="row">
+        <div class="col m4">
+          <div class="card">
+            <div class="card-image">
+              <%= image_tag(avatar, size: "250x250") %>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
 
-      <script>
-      $(document).ready(function() {
-        $(function () {
-            $("#" + <%=index%>).rateYo({
-              rating: <%= review.rating %>,
-              starWidth: "20px",
+      <hr>
+
+      <div class="row">
+        <div class="col s12 m7">
+          <div class="card">
+              <div class="card-image">
+                <div id="map" style="width:100%"></div>
+              </div>
+              <div class="card-content">
+              <p><i class="material-icons left">room</i><%= @restaurant.address %></p><br>
+              <p><i class="material-icons left">comment</i><%= @restaurant.description %></p>
+              </div>
+            </div>
+          </div>
+      </div>
+        <script>
+        function initMap() {
+          var location = {lat: <%= @restaurant.latitude %>, lng: <%= @restaurant.longitude %>};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: location
+          });
+          var marker = new google.maps.Marker({
+            position: location,
+            map: map
+          });
+        }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDEgBHk1qd0PT7WES0ozFGiQB8owSRet8&callback=initMap"
+        async defer></script>
+
+        <hr>
+
+        <h4>Reviews</h4>
+        <table WIDTH="60%">
+          <% @restaurant.reviews.each_with_index do |review, index| %>
+
+          <tr>
+            <td width="15%"><h6><%= review.reviewer %></h6></td>
+            <td width="45%"><div id="<%= index%>"></div></td>
+          </tr>
+          <tr>
+            <td width="15%"></td>
+            <td width="45%"><%= review.text %></td>
+          </tr>
+          <tr><td colspan="2"><br></td></tr>
+
+          <script>
+          $(document).ready(function() {
+            $(function () {
+              $("#" + <%=index%>).rateYo({
+                rating: <%= review.rating %>,
+                starWidth: "20px",
+                readOnly: true
+              });
+            });
+          });
+          </script>
+
+
+          <% end %>
+
+        </table>
+        <hr>
+
+        <% if @restaurant.user_id != @current_user.id%>
+
+        <h4>Add a review:</h4>
+        <%= form_for([@restaurant, @restaurant.reviews.build]) do |f| %>
+
+        <p>
+          <%= f.label(:text, "Review:") %><br>
+          <%= f.text_area(:text) %>
+        </p>
+
+        <%= f.hidden_field(:rating) %>
+
+        <p>Rating: <div id="star"></div></p>
+
+        <p>
+          <%= f.submit 'Submit', :id => "get", :class => 'waves-effect waves-light btn green accent-4' %>
+        </p>
+
+        <% end %>
+
+        <% end %>
+
+
+        <br><form method="get" action="/restaurants">
+          <button class="waves-effect waves-light btn red" type="submit"><i class="material-icons right">list</i>Back to list</button>
+        </form>
+
+        <script>
+        $(document).ready(function() {
+          $(function () {
+            var $rateYo = $("#star").rateYo({
+              fullStar: true
+            });
+            $("#get").click(function () {
+              var rating = $rateYo.rateYo("rating");
+              $("#review_rating").val(rating)
+            });
+          });
+
+          $(function () {
+            $("#avg").rateYo({
+              rating: <%= @restaurant.average_rating %>,
               readOnly: true
             });
-      });
-    });
-      </script>
+          });
 
+        })
+        </script>
 
-    <% end %>
+      </div>
 
-  </table>
-  <hr>
-
-    <% if @restaurant.user_id != @current_user.id%>
-
-    <h2>Add a review:</h2>
-    <%= form_for([@restaurant, @restaurant.reviews.build]) do |f| %>
-
-    <p>
-      <%= f.label(:text, "Review:") %><br>
-      <%= f.text_area :text %>
-    </p>
-
-    <%= f.hidden_field(:rating) %>
-
-    <div id="star"></div>
-
-    <p>
-      <%= f.submit 'Submit', :id => "get" %>
-    </p>
-
-    <% end %>
-
-    <% else %>
-    <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-    <%= link_to 'Back', restaurants_path %>
-    <% end %>
-
-
-    <form method="get" action="/restaurants">
-      <button type="submit">List</button>
-    </form>
-
-    <script>
-    $(document).ready(function() {
-      $(function () {
-        var $rateYo = $("#star").rateYo({
-          fullStar: true
-        });
-        $("#get").click(function () {
-          var rating = $rateYo.rateYo("rating");
-          $("#review_rating").val(rating)
-        });
-      });
-
-      $(function () {
-        $("#avg").rateYo({
-          rating: <%= @restaurant.average_rating %>,
-          readOnly: true
-        });
-      });
-
-    })
-    </script>
-
-  </body>
-  </html>
+    </body>
+    </html>

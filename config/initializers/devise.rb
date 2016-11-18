@@ -37,7 +37,7 @@ Devise.setup do |config|
   # config.authentication_keys = [:email]
 
   # facebook authentication
-  config.omniauth :facebook, "376687579339706", "1aa292a06196f8b3ed1ae946174aa4c5",
+  config.omniauth :facebook, ENV["facebook_api_id"], ENV["facebook_app_secret"],
                   callback_url: "http://localhost:3000/users/auth/facebook/callback",
                   scope: 'email',
                   info_fields: 'email'

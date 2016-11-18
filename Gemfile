@@ -44,7 +44,7 @@ gem 'carrierwave_direct'
 gem 'sidekiq'
 gem 'omniauth-facebook'
 gem 'rake'
-
+gem 'dotenv-rails', :groups => [:development, :test, :production]
 
 
 # Use unicorn as the app server

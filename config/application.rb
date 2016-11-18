@@ -9,12 +9,7 @@ Bundler.require(*Rails.groups)
 module Yelp
   class Application < Rails::Application
     config.assets.initialize_on_precompile = false
-    config.fog_credentials = {
-      provider: "AWS",
-      aws_access_key_id: ENV["aws_access_key_id"],
-      aws_secret_access_key: ENV["aws_secret_access_key"]
-    }
-    config.fog_directory = ENV["AWS_S3_BUCKET"]
+  
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

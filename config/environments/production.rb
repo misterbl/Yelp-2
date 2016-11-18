@@ -2,7 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
-  
+
   config.cache_classes = true
   config.action_controller.asset_host = "//#{ENV['AWS_S3_BUCKET']}.s3.amazonaws.com"
   # Eager load code on boot. This eager loads most of Rails and
@@ -26,12 +26,13 @@ Rails.application.configure do
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
   # config.assets.css_compressor = :sass
-
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
+  config.serve_static_files = false
   config.assets.compile = true
-
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
   # Generate digests for assets URLs.
   config.assets.digest = true
+  # Do not fallback to assets pipeline if a precompiled asset is missed.
+
 
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'

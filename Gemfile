@@ -49,7 +49,7 @@ gem 'dotenv-rails', :groups => [:development, :test, :production]
 gem 'aws-sdk', '< 2.3'
 gem 'materialize-sass'
 gem 'paperclip'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 gem 'puma'
 
 

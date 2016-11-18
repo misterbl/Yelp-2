@@ -47,7 +47,9 @@ gem 'rake'
 gem 'dotenv-rails', :groups => [:development, :test, :production]
 gem 'aws-sdk', '< 2.3'
 gem 'paperclip'
-
+ruby '2.3.0'
+gem 'rails_12factor'
+gem 'puma'
 
 # Use unicorn as the app server
 # gem 'unicorn'

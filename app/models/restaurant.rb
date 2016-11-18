@@ -3,19 +3,18 @@ class Restaurant < ActiveRecord::Base
   has_many :reviews
   validates :name, presence: true
   validates :description, presence: true, length: { minimum: 10 }
-  has_attached_file :avatars, :styles => { :medium => "300x300>", :thumb => "100x100#" },
-    :default_url => "/images/:style/missing.png",
-    :url  => ":s3_domain_url",
-    :path => "public/avatars/:id/:style_:basename.:extension",
-    :storage => :fog,
-    :fog_credentials => {
-        provider: 'AWS',
-        aws_access_key_id: ENV["aws_access_key_id"],
-        aws_secret_access_key: ENV["aws_secret_access_key"]
-    },
-    fog_directory: "rails-demo-env"
-
-  mount_uploaders :avatars, AvatarUploader
+  mount_uploaders :avatars, AvatarUploader,
+                  :styles => { :medium => "300x300>", :thumb => "100x100#" },
+                    :default_url => "/images/:style/missing.png",
+                    :url  => ":s3_domain_url",
+                    :path => "public/avatars/:id/:style_:basename.:extension",
+                    :storage => :fog,
+                    :fog_credentials => {
+                        provider: 'AWS',
+                        aws_access_key_id: ENV["aws_access_key_id"],
+                        aws_secret_access_key: ENV["aws_secret_access_key"]
+                    },
+                    fog_directory: "rails-demo-env"
   geocoded_by :address
   after_validation :geocode, if: ->(obj){ obj.address.present? and obj.address_changed? }
 

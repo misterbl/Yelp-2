@@ -2,6 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
+  
   config.cache_classes = true
   config.action_controller.asset_host = "//#{ENV['AWS_S3_BUCKET']}.s3.amazonaws.com"
   # Eager load code on boot. This eager loads most of Rails and

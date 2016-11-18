@@ -46,6 +46,7 @@ gem 'omniauth-facebook'
 gem 'rake'
 gem 'dotenv-rails', :groups => [:development, :test, :production]
 gem 'aws-sdk', '< 2.0'
+gem 'compass'
 
 # Use unicorn as the app server
 # gem 'unicorn'

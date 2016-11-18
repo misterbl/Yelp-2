@@ -45,7 +45,7 @@ gem 'sidekiq'
 gem 'omniauth-facebook'
 gem 'rake'
 gem 'dotenv-rails', :groups => [:development, :test, :production]
-gem 'aws-sdk', '< 2.0'
+gem 'aws-sdk', '< 2.3'
 
 
 # Use unicorn as the app server

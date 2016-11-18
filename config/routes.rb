@@ -7,16 +7,19 @@ Rails.application.routes.draw do
   #   omniauth_callbacks: "users/omniauth_callbacks"
   # }
 
-  devise_for :users, controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations',
-    omniauth_callbacks: "users/omniauth_callbacks"
-
-  }
-
- devise_scope :user do
-   get 'users/sign_out' => 'devise/sessions#destroy'
- end
+  devise_for :users
+    devise_scope :user do
+      authenticated :user do
+        root :to => 'restaurants#index', as: :authenticated_root
+      end
+      unauthenticated :user do
+        root :to => 'users/sessions#new', as: :unauthenticated_root
+      end
+    end
+ # 
+ # devise_scope :user do
+ #   get 'users/sign_out' => 'devise/sessions#destroy'
+ # end
 
   resources :restaurants
 
